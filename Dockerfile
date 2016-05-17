@@ -17,7 +17,7 @@ ENV PERCONA_VERSION 2.2.15
 ENV RERELEASE_VERSION 2.2.15-2
 
 WORKDIR /tmp
-RUN wget https://www.percona.com/downloads/percona-toolkit/${PERCONA_VERSION}/deb/percona-toolkit_${RERELEASE_VERSION}-2_all.deb && \
+RUN wget https://www.percona.com/downloads/percona-toolkit/${PERCONA_VERSION}/deb/percona-toolkit_${RERELEASE_VERSION}_all.deb && \
     dpkg -i percona-toolkit_${RERELEASE_VERSION}_all.deb && \
     rm -f percona-toolkit_${RERELASE_VERSION}_all.deb
 
