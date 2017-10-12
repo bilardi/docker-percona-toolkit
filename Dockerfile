@@ -1,5 +1,5 @@
 FROM debian:stable
-MAINTAINER Carles Amigó, fr3nd@fr3nd.net
+LABEL  maintainer "yuuki0xff <yuuki0xff@gmail.com>"
 
 ENV PERCONA_VERSION 3.0.4
 ENV RELEASE_VERSION 3.0.4-1
