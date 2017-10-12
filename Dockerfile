@@ -1,6 +1,9 @@
 FROM debian:stable
 MAINTAINER Carles Amigó, fr3nd@fr3nd.net
 
+ENV PERCONA_VERSION 3.0.4
+ENV RELEASE_VERSION 3.0.4-1
+
 RUN apt-get update && apt-get install -y \
       libdbd-mysql-perl \
       libdbi-perl \
@@ -11,14 +14,7 @@ RUN apt-get update && apt-get install -y \
       && rm -rf /usr/share/doc/* && \
       rm -rf /usr/share/info/* && \
       rm -rf /tmp/* && \
-      rm -rf /var/tmp/*
-
-ENV PERCONA_VERSION 2.2.15
-ENV RERELEASE_VERSION 2.2.15-2
-
-WORKDIR /tmp
-RUN wget https://www.percona.com/downloads/percona-toolkit/${PERCONA_VERSION}/deb/percona-toolkit_${RERELEASE_VERSION}_all.deb && \
-    dpkg -i percona-toolkit_${RERELEASE_VERSION}_all.deb && \
-    rm -f percona-toolkit_${RERELASE_VERSION}_all.deb
-
-WORKDIR /
+      rm -rf /var/tmp/* && \
+      wget -O percona-toolkit.deb https://www.percona.com/downloads/percona-toolkit/${PERCONA_VERSION}/binary/debian/stretch/x86_64/percona-toolkit_${RELEASE_VERSION}.stretch_amd64.deb && \
+      dpkg -i percona-toolkit.deb && \
+      rm -f percona-toolkit.deb
