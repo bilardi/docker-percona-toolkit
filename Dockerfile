@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stable
 MAINTAINER Carles Amigó, fr3nd@fr3nd.net
 
 RUN apt-get update && apt-get install -y \
