@@ -1,19 +1,10 @@
 # percona-toolkit docker image
 
 ## Description
+You can run all tools included in the percona-toolkit inside a Docker container.
+See [Percona toolkit official site](https://www.percona.com/software/mysql-tools/percona-toolkit) for more detail about percona toolkit.
 
-Percona Toolkit for MySQL® is a collection of advanced open source command-line
-tools, developed and used by the Percona technical staff, that are engineered
-to perform a variety of MySQL and system tasks that are too difficult or
-complex to perform manually. Percona Toolkit supports Percona Server, MySQL®
-and MariaDB® and works best with Percona Server and other Percona products.
-
-* https://www.percona.com/software/mysql-tools/percona-toolkit
-
-This image allows you to run all the tools included in percona-toolkit from
-inside a Docker container.
-
-Included tools
+## Included tools
 
 * pt-align
 * pt-archiver
