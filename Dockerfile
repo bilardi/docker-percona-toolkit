@@ -1,8 +1,8 @@
 FROM debian:stable
 LABEL  maintainer "yuuki0xff <yuuki0xff@gmail.com>"
 
-ENV PERCONA_VERSION 3.0.4
-ENV RELEASE_VERSION 3.0.4-1
+ENV PERCONA_VERSION 3.0.6
+ENV RELEASE_VERSION 3.0.6-1
 
 RUN apt-get update && apt-get install -y \
       libdbd-mysql-perl \
