@@ -2,6 +2,7 @@ ARG DEBIAN_VERSION=buster
 
 FROM debian:${DEBIAN_VERSION}
 LABEL  maintainer "yuuki0xff <yuuki0xff@gmail.com>"
+ARG DEBIAN_VERSION=buster
 
 ENV PERCONA_VERSION 3.1
 ENV RELEASE_VERSION 3.1-1
