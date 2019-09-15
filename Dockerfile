@@ -3,8 +3,8 @@ ARG DEBIAN_VERSION=buster
 FROM debian:${DEBIAN_VERSION}
 LABEL  maintainer "yuuki0xff <yuuki0xff@gmail.com>"
 
-ENV PERCONA_VERSION 3.0.13
-ENV RELEASE_VERSION 3.0.13-1
+ENV PERCONA_VERSION 3.1
+ENV RELEASE_VERSION 3.1-1
 
 RUN apt-get update && apt-get install -y \
       libdbd-mysql-perl \
