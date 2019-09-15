@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:buster
 LABEL  maintainer "yuuki0xff <yuuki0xff@gmail.com>"
 
 ENV PERCONA_VERSION 3.0.13
