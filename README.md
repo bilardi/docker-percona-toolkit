@@ -4,6 +4,24 @@
 You can run all tools included in the percona-toolkit inside a Docker container.
 See [Percona toolkit official site](https://www.percona.com/software/mysql-tools/percona-toolkit) for more detail about percona toolkit.
 
+## Usage
+If you want to use the local Dockerfile, you can run the script in the same directory of the Dockerfile
+```sh
+bash run.sh pt-query-digest --version
+```
+or you can use directly the docker commands
+```sh
+docker build -t local-percona-toolkit .
+docker run --rm -ti local-percona-toolkit pt-query-digest --version
+```
+
+If you want to use the docker image, you can run the script removing the Dockerfile (*) or
+```sh
+docker pull yuuki0xff/percona-toolkit
+docker run --rm -ti yuuki0xff/percona-toolkit pt-query-digest --version
+```
+(*) if the script doesn't find the Dockerfile, it pulls the docker image
+
 ## Included tools
 
 * pt-align
