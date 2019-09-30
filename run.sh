@@ -1,7 +1,10 @@
 #! /bin/bash
+# Environment:
+#   DOCKER_PERCONA_TOOLKIT: Docker image name for the percona toolkit  (default: yuuki0xff/percona-toolkit)
+set -eu
 
-# initialization
-repository="yuuki0xff/percona-toolkit"
+# Set default value when value is not defined.
+: "${DOCKER_PERCONA_TOOLKIT:=yuuki0xff/percona-toolkit}"
 
 # help
 function help {
@@ -19,13 +22,4 @@ function help {
 if [ -z $1 ]; then
     help
 fi
-if [ -e Dockerfile ]; then
-    repository="local-percona-toolkit"
-    if [ $(docker images | grep -c $repository) -eq 0 ]; then
-        docker build -t $repository .
-    fi
-else
-    echo If you want to use the local Dockerfile, you have to run the script in the same directory of the Dockerfile!
-    docker pull $repository
-fi
-docker run --rm -ti -v $(pwd):/mnt:ro -w /mnt $repository "$@"
+docker run --rm -ti -v $(pwd):/mnt:ro -w /mnt "$DOCKER_PERCONA_TOOLKIT" "$@"
