@@ -19,7 +19,7 @@ function help {
 }
 
 # main
-if [ -z $1 ]; then
+if [ -z "${1:-}" ]; then
     help
 fi
 docker run --rm -ti -v $(pwd):/mnt:ro -w /mnt "$DOCKER_PERCONA_TOOLKIT" "$@"
