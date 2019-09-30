@@ -28,4 +28,4 @@ else
     echo If you want to use the local Dockerfile, you have to run the script in the same directory of the Dockerfile!
     docker pull $repository
 fi
-docker run --rm -ti -v $(pwd):/tmp:ro $repository $@
+docker run --rm -ti -v $(pwd):/tmp:ro $repository "$@"
