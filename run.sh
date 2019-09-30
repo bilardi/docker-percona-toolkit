@@ -8,7 +8,7 @@ function help {
     echo
     echo Usage: $0 pt-command and arguments
     echo Example: $0 pt-query-digest --version
-    echo "Example: $0 pt-query-digest --limit=100% tmp/slow_query.log > slow_query.pqd"
+    echo "Example: $0 pt-query-digest --limit=100% slow_query.log > slow_query.pqd"
     echo WHERE slow_query.log is in the same directory of the script
     echo AND slow_query.pqd will be saved in the same directory of the script
     echo
@@ -28,4 +28,4 @@ else
     echo If you want to use the local Dockerfile, you have to run the script in the same directory of the Dockerfile!
     docker pull $repository
 fi
-docker run --rm -ti -v $(pwd):/tmp:ro $repository "$@"
+docker run --rm -ti -v $(pwd):/mnt:ro -w /mnt $repository "$@"
