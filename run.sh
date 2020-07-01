@@ -8,7 +8,7 @@ function help {
     echo
     echo Usage: $0 pt-command and arguments
     echo Example: $0 pt-query-digest --version
-    echo Example: $0 pt-query-digest --limit=100% tmp/slow_query.log > slow_query.pqd
+    echo "Example: $0 pt-query-digest --limit=100% tmp/slow_query.log > slow_query.pqd"
     echo WHERE slow_query.log is in the same directory of the script
     echo AND slow_query.pqd will be saved in the same directory of the script
     echo
